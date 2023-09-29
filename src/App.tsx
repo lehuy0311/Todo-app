@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './styles/sb-admin-2.min.css'
+
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes} from 'react-router';
+import { Admin } from './pages/Admin/Admin';
+import { Login } from './pages/Account/Login';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" id='wrapper'>
+      <Router>
+        <Routes>
+        <Login></Login>
+        <Admin></Admin>
+        </Routes>
+      </Router>
+
     </div>
   );
 }
